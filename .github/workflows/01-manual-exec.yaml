@@ -44,4 +44,3 @@ jobs:
             - name: Executando testes e2e
               run: yarn run e2e
 
-#essa informação não serve de nada, foi só um teste pra subir a alteração no git.              
