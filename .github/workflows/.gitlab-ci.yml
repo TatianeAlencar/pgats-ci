@@ -12,4 +12,4 @@ e2e-tests:
     - yarn playwright install
     - yarn run e2e
 
-  when: manual
+  when: manual #substitui o  workflow_dispatch:
