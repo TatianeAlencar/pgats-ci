@@ -44,3 +44,39 @@ jobs:
             - name: Executando testes e2e
               run: yarn run e2e
 
+            # irá gerar o relatório na pipeline
+            - name: Gerar relatório Allure
+              if: always()
+              run: |
+                npx allure generate allure-results --clean -o allure-report
+
+            - name: Upload Allure Report
+              if: always()
+              uses: actions/upload-artifact@v4
+              with:
+                name: allure-report
+                path: allure-report
+                
+            # publicar como artefato 
+            - name: Publicar resultados dos testes
+              if: always()
+              uses: dorny/test-reporter@v3
+              with:
+                name: Playwright Tests
+                path: results.xml
+                reporter: java-junit
+
+            #  Configurar o dorny/test-reporter
+            - name: Publicar resultados
+              if: always()
+              uses: dorny/test-reporter@v3
+              with:
+                name: Playwright Tests
+                path: test-results/results.xml
+                reporter: java-junit
+
+
+
+
+
+
