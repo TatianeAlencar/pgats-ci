@@ -5,13 +5,10 @@ name: "Execução Manual"
 
 # gatilhos / triggers - regras de disparo
 # gatilho manual = workflow_dispatch
-
-
 on:
     workflow_dispatch:
-
+    
 #tarefas dentro da pipeline = jobs
-
 jobs:
     #nome do job
     e2e-tests:
@@ -56,6 +53,7 @@ jobs:
               with:
                 name: allure-report
                 path: allure-report
+                retention-days: 7
                 
             #  Configurar o dorny/test-reporter
             - name: Publicar resultados dos testes
