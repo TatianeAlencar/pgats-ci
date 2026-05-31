@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","5422","user should be able to ride","chromium","2026-05-31","passed","2026-05-31","user rides","example.spec.js","",""
+"","5509","user with minimum height should be allowed","chromium","2026-05-31","passed","2026-05-31","user rides","example.spec.js","",""
+"","6412","user above height should not be allowed","chromium","2026-05-31","passed","2026-05-31","user rides","example.spec.js","",""
