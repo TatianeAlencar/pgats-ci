@@ -57,22 +57,13 @@ jobs:
                 name: allure-report
                 path: allure-report
                 
-            # publicar como artefato 
+            #  Configurar o dorny/test-reporter
             - name: Publicar resultados dos testes
               if: always()
               uses: dorny/test-reporter@v3
               with:
                 name: Playwright Tests
                 path: results.xml
-                reporter: java-junit
-
-            #  Configurar o dorny/test-reporter
-            - name: Publicar resultados
-              if: always()
-              uses: dorny/test-reporter@v3
-              with:
-                name: Playwright Tests
-                path: test-results/results.xml
                 reporter: java-junit
 
 
