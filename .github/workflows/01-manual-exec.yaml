@@ -23,7 +23,7 @@ jobs:
             # instalção do node
             - uses: actions/setup-node@v4
               with:
-                  node-version: 24.x
+                  node-version: 22.x
 
             # instalação do Yarn
             - name: Instalando Yarn
@@ -40,6 +40,10 @@ jobs:
             # executar os testes e2e
             - name: Executando testes e2e
               run: yarn run e2e
+
+            #
+            - name: Debug allure-results
+              run: ls -R allure-results || true  
 
             # irá gerar o relatório na pipeline
             - name: Gerar relatório Allure
