@@ -62,6 +62,11 @@ jobs:
                 name: allure-report
                 path: allure-report
                 retention-days: 7
+
+            - name: Debug report files
+              shell: pwsh
+              run: |
+                Get-ChildItem -Path . -Recurse -Include *.xml    
                 
             # Configurar o dorny/test-reporter
             - name: Publicar resultados dos testes
