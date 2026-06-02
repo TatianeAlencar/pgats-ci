@@ -22,6 +22,7 @@ jobs:
 
             # limpar ambiente antes de instalar
             - name: Clean workspace
+              shell: bash
               run: rm -rf node_modules allure-results allure-report
 
             # instalção do node
@@ -48,10 +49,6 @@ jobs:
             # instalação do Allure CLI  
             - name: Install Allure CLI
               run: npm install -g allure-commandline
-
-            # verificacao de versao (debug)
-            - name: Check Allure version
-              run: npx allure --version  
 
             # irá gerar o relatório do Allure na pipeline
             - name: Generate Allure Report
